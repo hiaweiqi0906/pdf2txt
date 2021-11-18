@@ -29,7 +29,7 @@ foreach ($files as $file) { // iterate files
 
 <head>
     <meta charset="utf-8">
-    <title>Implement Sticky Header and Footer with CSS</title>
+    <title>PDF.TXT - Online Pdf to Txt Converter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Dosis:wght@600&family=Lato&family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -254,8 +254,6 @@ foreach ($files as $file) { // iterate files
 
 <body>
     <section id="navbar">
-
-
         <div class="fixed-header">
             <div class="container">
                 <nav>

@@ -2,7 +2,8 @@
 $target_dir = "uploads/";
 $temp = explode(".", $_FILES["fileToUpload"]["name"]);
 $newfilename = "pdf_to_convert" . '.' . end($temp);
-$target_file = $target_dir . $newfilename;//basename($_FILES["fileToUpload"]["name"])
+$target_file = $target_dir . $newfilename;
+
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -42,10 +43,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    exec("cd ./java/src/com/example/helloworld/ && javac -cp \"D:/Apps/xampp/htdocs/testPhpandJava/java lib/pdfbox-app-2.0.24.jar;.\" HelloWorld.java && java -cp \"D:/Apps/xampp/htdocs/testPhpandJava/java lib/pdfbox-app-2.0.24.jar;.\" HelloWorld", $output); //java java/src/com/example/helloworld/HelloWorld.java
-    // exec("javac -cp \"D:/Apps/xampp/htdocs/testPhpandJava/java lib/pdfbox-app-2.0.24.jar;.\" HelloWorld.java");
-    // exec("java -cp \"D:/Apps/xampp/htdocs/testPhpandJava/java lib/pdfbox-app-2.0.24.jar;.\" HelloWorld");
-    // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    exec("cd /var/www/testphpandjava/java/src/com/example/helloworld/ && javac -cp \".:pdfbox-app-2.0.24.jar\" HelloWorld.java && java -cp \".:pdfbox-app-2.0.24.jar\" HelloWorld", $output);
     include 'download.php';
   } else {
     echo "Sorry, there was an error uploading your file.";
